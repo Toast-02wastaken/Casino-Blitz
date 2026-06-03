@@ -5,12 +5,10 @@ import os
 import sys
 
 
-
-from Check_10k import check_Win
-from src.Minigames.Black_Jack_Script import black_Jack
-from src.Minigames.Slot_Machine_Script import slot_Machine
-from src.Minigames.Roulette_Script import roulette
-from src.Minigames.Flip_A_Coin_Script import flip_A_Coin
+from Minigames.Black_Jack_Script import black_Jack
+from Minigames.Slot_Machine_Script import slot_Machine
+from Minigames.Roulette_Script import roulette
+from Minigames.Flip_A_Coin_Script import flip_A_Coin
 
 
 
@@ -31,7 +29,20 @@ print("Ok lets start")
 print("You start with $500 than gample, win = double, loose = loose the bet")
 
 
-
+def check_Win():
+    if money >= win_Amount:
+        print("Congratulations, you won!")
+        print(f"You got ${money} and the win amount was ${win_Amount}")
+        credits = input("Do you wish to print credits? (y/n) >").lower()
+        if credits == "y" or credits == "yes":
+            print("Credits:")
+            print("Game Developer: Slushcraft")
+            print("Special Thanks: Makaio, Humyle and everyone else who helped test and give feedback")
+            print("Also thanks to them for being my friends through my journey of learning how to code and making this game")
+            print("And thank YOU for playing!")
+        else:
+            print("Thanks for playing!")
+        sys.exit()
 
 
 
