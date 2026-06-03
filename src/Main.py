@@ -6,10 +6,10 @@ import sys
 
 
 
-from Minigames.Black_Jack_Script import black_Jack
-from Minigames.Slot_Machine_Script import slot_Machine
-from Minigames.Roulette_Script import roulette
-from Minigames.Flip_A_Coin_Script import flip_A_Coin
+from src.Minigames.Black_Jack_Script import black_Jack
+from src.Minigames.Slot_Machine_Script import slot_Machine
+from src.Minigames.Roulette_Script import roulette
+from src.Minigames.Flip_A_Coin_Script import flip_A_Coin
 
 
 
