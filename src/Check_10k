@@ -1,0 +1,20 @@
+
+import sys
+import os
+import time
+
+def check_Win():
+    if money >= win_Amount:
+        print("Congratulations, you won!")
+        print(f"You got ${money} and the win amount was ${win_Amount}")
+        credits = input("Do you wish to print credits? (y/n) >").lower()
+        if credits == "y" or credits == "yes":
+            print("Credits:")
+            print("Game Developer: Slushcraft")
+            print("Special Thanks: Makaio, Humyle and everyone else who helped test and give feedback")
+            print("Also thanks to them for being my friends through my journey of learning how to code and making this game")
+            print("And thank YOU for playing!")
+        else:
+            print("Thanks for playing!")
+        sys.exit()
+    

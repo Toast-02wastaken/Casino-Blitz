@@ -6,6 +6,7 @@ import sys
 
 
 
+from Check_10k import check_Win
 from src.Minigames.Black_Jack_Script import black_Jack
 from src.Minigames.Slot_Machine_Script import slot_Machine
 from src.Minigames.Roulette_Script import roulette
@@ -18,11 +19,13 @@ slot_Machine_Win = False
 black_Jack_Win = False
 coin_Side = 0
 
+win_Amount = 10000
 
 os.system('cls' if os.name == 'nt' else 'clear')
 
 print("=== Casino Blitz ===")
-print("You have to get $10k to win")
+print(f"You have to get ${win_Amount} to win")
+print("*to change, use the change command in the choice terminal*")
 time.sleep(0.5)
 print("Ok lets start")
 print("You start with $500 than gample, win = double, loose = loose the bet")
@@ -46,6 +49,7 @@ while True:
         print("Commands:")
         print("- clear")
         print("- exit")
+        print("- change win amount")
     
     #Black Jack ===========================================
     elif game_Choice == "black jack":
@@ -88,6 +92,7 @@ while True:
                     money = money - bet
                     print(f"You know have ${money}")
                     print("============================")
+                    check_Win()
                     if money == 0:
                         print("You went broke...")
                         break
@@ -108,6 +113,7 @@ while True:
                 money = bet + money
                 print(f"You now have ${money}")
                 print("============================")
+                check_Win()
             elif roulette_Win == False:
                 print(f"You lost ${bet}")
                 money = money - bet
@@ -133,6 +139,7 @@ while True:
                 money = bet + money
                 print(f"You now have ${money}")
                 print("============================")
+                check_Win()
             elif coin_Win == False:
                 print(f"You lost ${bet}")
                 money = money - bet
@@ -152,4 +159,14 @@ while True:
         os.system('cls' if os.name == 'nt' else 'clear')
     elif game_Choice == "exit":
         sys.exit()
+    elif game_Choice == "change win amount"or game_Choice == "change win" or game_Choice == "change amount" or game_Choice == "change":
+        print("What do you want to change the win amount to?")
+        new_Amount = int(input("$"))
+        win_Amount = new_Amount
+        print(f"Win amount changed to ${win_Amount}")
+
+print("The bad ending...")
+print("You went broke and lost all your money, better luck next time...")
+print("thanks for playing ig, go win the game...")
+sys.exit()
         
