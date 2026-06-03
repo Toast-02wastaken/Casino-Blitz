@@ -131,6 +131,7 @@ def slot_Machine():
         else:
             print("ok you got close, tuff luck bro score = 2 ")
             return False
+
             slot_Machine_Win = False
     else:
         print("You lose! score = 1")
