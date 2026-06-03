@@ -36,7 +36,7 @@ def check_Win():
         credits = input("Do you wish to print credits? (y/n) >").lower()
         if credits == "y" or credits == "yes":
             print("Credits:")
-            print("Game Developer: Slushcraft")
+            print("Game Developer: Slushcraft (aka Toast-02)")
             print("Special Thanks: Makaio, Humyle and everyone else who helped test and give feedback")
             print("Also thanks to them for being my friends through my journey of learning how to code and making this game")
             print("And thank YOU for playing!")
