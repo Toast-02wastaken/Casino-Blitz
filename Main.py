@@ -8,6 +8,7 @@ import sys
 
 from Minigames.Black_Jack_Script import black_Jack
 from Minigames.Slot_Machine_Script import slot_Machine
+from Minigames.Roulette_Script import roulette
 
 
 
@@ -15,6 +16,7 @@ from Minigames.Slot_Machine_Script import slot_Machine
 slot_Machine_Win = False
 black_Jack_Win = False
 coin_Side = 0
+roulette_Win = False
 
 os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -38,6 +40,7 @@ while True:
         print("list of games:")
         print("- black jack")
         print("- slot machine")
+        print("- roulette")
         print("Commands:")
         print("- clear")
         print("- exit")
@@ -90,6 +93,31 @@ while True:
                     print("ERROR")
             elif bet > money:
                 print("Bro bet something you can aford")
+    #Roulette ======================================================================================
+    elif game_Choice == "roulette":
+        print("Roulette, please place a bet")
+        bet = int(input("$"))
+        if bet <= money:
+            print(f"bet placed as ${bet}")
+            roulette()
+            if roulette_Win == True:
+                bet = bet * 2
+                print(f"You got ${bet}")
+                money = bet + money
+                print(f"You now have ${money}")
+                print("============================")
+            elif roulette_Win == False:
+                print(f"You lost ${bet}")
+                money = money - bet
+                print(f"You know have ${money}")
+                print("============================")
+                if money == 0:
+                    print("You went broke...")
+                    break
+            else:
+                print("ERROR")
+        elif bet > money:
+            print("Bro bet something you can aford")
 
     #Other commands:
     elif game_Choice == "clear":
