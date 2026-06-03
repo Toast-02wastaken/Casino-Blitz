@@ -60,7 +60,8 @@ while True:
         print("Commands:")
         print("- clear")
         print("- exit")
-        print("- change win amount")
+        print("- change win amount (WARNING: INVLIDATES RUN)")
+        print("- money (WARNING: INVLIDATES RUN)")
     
     #Black Jack ===========================================
     elif game_Choice == "black jack":
@@ -171,10 +172,22 @@ while True:
     elif game_Choice == "exit":
         sys.exit()
     elif game_Choice == "change win amount"or game_Choice == "change win" or game_Choice == "change amount" or game_Choice == "change":
-        print("What do you want to change the win amount to?")
-        new_Amount = int(input("$"))
-        win_Amount = new_Amount
-        print(f"Win amount changed to ${win_Amount}")
+        print("WARNING: THIS INVALIDATES YOUR RUN, ARE YOU SURE YOU WANT TO USE THIS COMMAND?")
+        confirmation_Change = input("(y/n) >").lower()
+        if confirmation_Change == "y":
+            print("What do you want to change the win amount to?")
+            new_Amount = int(input("$"))
+            win_Amount = new_Amount
+            print(f"Win amount changed to ${win_Amount}")
+        else:
+            print("Command cancelled")
+    elif game_Choice == "money":
+        print("WARNING: THIS INVALIDATES YOUR RUN, ARE YOU SURE YOU WANT TO USE THIS COMMAND?")
+        confirmation_Money = input("(y/n) >").lower()
+        if confirmation_Money == "y":
+            money = int(input("How much money do you want to have? $"))
+        else:
+            print("Command cancelled")
 
 print("The bad ending...")
 print("You went broke and lost all your money, better luck next time...")
