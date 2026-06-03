@@ -16,7 +16,7 @@ from Minigames.Roulette_Script import roulette
 slot_Machine_Win = False
 black_Jack_Win = False
 coin_Side = 0
-roulette_Win = False
+
 
 os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -99,7 +99,7 @@ while True:
         bet = int(input("$"))
         if bet <= money:
             print(f"bet placed as ${bet}")
-            roulette()
+            roulette_Win = roulette()
             if roulette_Win == True:
                 bet = bet * 2
                 print(f"You got ${bet}")

@@ -4,9 +4,13 @@ import math
 import os
 import sys
 
+
+
 def roulette():
 
-    roulette_Win = False
+    
+
+   
 
     red_Or_Black = input("Red or black? >").lower()
 
@@ -29,15 +33,15 @@ def roulette():
 
     if random_Picker == 1:
         if choice == "red":
-            roulette_Win = True
             print("You won!")
+            return True
         else:
             print("You lost...")
-            roulette_Win = False
+            return False
     elif random_Picker == 2:
         if choice == "black":
             print("You won!")
-            roulette_Win = True
+            return True
         else:
             print("You lost...")
-            roulette_Win = False
+            return False
