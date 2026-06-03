@@ -17,6 +17,8 @@ slot_Machine_Win = False
 black_Jack_Win = False
 coin_Side = 0
 
+invalidate_Run = False
+
 win_Amount = 10000
 
 os.system('cls' if os.name == 'nt' else 'clear')
@@ -31,18 +33,33 @@ print("You start with $500 than gample, win = double, loose = loose the bet")
 
 def check_Win():
     if money >= win_Amount:
-        print("Congratulations, you won!")
-        print(f"You got ${money} and the win amount was ${win_Amount}")
-        credits = input("Do you wish to print credits? (y/n) >").lower()
-        if credits == "y" or credits == "yes":
-            print("Credits:")
-            print("Game Developer: Slushcraft (aka Toast-02)")
-            print("Special Thanks: Makaio, Humyle and everyone else who helped test and give feedback")
-            print("Also thanks to them for being my friends through my journey of learning how to code and making this game")
-            print("And thank YOU for playing!")
-        else:
-            print("Thanks for playing!")
-        sys.exit()
+        if invalidate_Run == False:
+            print("Congratulations, you won!")
+            print(f"You got ${money} and the win amount was ${win_Amount}")
+            credits = input("Do you wish to print credits? (y/n) >").lower()
+            if credits == "y" or credits == "yes":
+                print("Credits:")
+                print("Game Developer: Slushcraft (aka Toast-02)")
+                print("Special Thanks: Makaio, Humyle and everyone else who helped test and give feedback")
+                print("Also thanks to them for being my friends through my journey of learning how to code and making this game")
+                print("And thank YOU for playing!")
+            else:
+                print("Thanks for playing!")
+            sys.exit()
+        elif invalidate_Run == True:
+            print("Congratulations, you won!")
+            print(f"You got ${money} and the win amount was ${win_Amount}")
+            print("However, you used a command that invalidates your run, so you can't get the good ending :(")
+            credits = input("Do you wish to print credits? (y/n) >").lower()
+            if credits == "y" or credits == "yes":
+                print("Credits:")
+                print("Game Developer: Slushcraft (aka Toast-02)")
+                print("Special Thanks: Makaio, Humyle and everyone else who helped test and give feedback")
+                print("Also thanks to them for being my friends through my journey of learning how to code and making this game")
+                print("And thank YOU for playing!")
+            else:
+                print("Thanks for playing!")
+            sys.exit()
 
 
 
@@ -178,6 +195,7 @@ while True:
             print("What do you want to change the win amount to?")
             new_Amount = int(input("$"))
             win_Amount = new_Amount
+            invalidate_Run = True
             print(f"Win amount changed to ${win_Amount}")
         else:
             print("Command cancelled")
@@ -186,6 +204,7 @@ while True:
         confirmation_Money = input("(y/n) >").lower()
         if confirmation_Money == "y":
             money = int(input("How much money do you want to have? $"))
+            invalidate_Run = True
         else:
             print("Command cancelled")
 
