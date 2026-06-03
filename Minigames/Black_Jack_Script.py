@@ -92,10 +92,10 @@ def black_Jack():
                 black_Jack_Win = True
                 print("Bang! you got",card_One)
                 print("Score:",card_One - 21)
-                break
+                return True
             elif cpu_Score > card_One:
                 print("You lost!")
                 black_Jack_Win = False
-                break
+                return False
         else:
             print("INVALID INPUT")

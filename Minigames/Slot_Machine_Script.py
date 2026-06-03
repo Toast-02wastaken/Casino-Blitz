@@ -125,11 +125,14 @@ def slot_Machine():
     if slot_One == slot_Two:
         if slot_Two == slot_Three:
             print("OH MY GOD YOU ACTUALLY WON! score = 3")
+            return True
             slot_Machine_Win = True
         
         else:
             print("ok you got close, tuff luck bro score = 2 ")
+            return False
             slot_Machine_Win = False
     else:
         print("You lose! score = 1")
+        return False
         slot_Machine_Win = False
