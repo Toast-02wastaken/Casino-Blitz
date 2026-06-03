@@ -69,6 +69,7 @@ while True:
     game_Choice = input("Which game, help for list >").lower()
     
     if game_Choice == "help":
+        print("================================================")
         print("list of games:")
         print("- black jack")
         print("- slot machine")
@@ -79,6 +80,8 @@ while True:
         print("- exit")
         print("- change win amount (WARNING: INVLIDATES RUN)")
         print("- money (WARNING: INVLIDATES RUN)")
+        print("- win (WARNING: INVLIDATES RUN)")
+        print("================================================")
     
     #Black Jack ===========================================
     elif game_Choice == "black jack":
@@ -181,6 +184,7 @@ while True:
                 print("ERROR")
         elif bet > money:
             print("Bro bet something you can aford")
+            print("================================================")
 
     #Other commands:
     elif game_Choice == "clear":
@@ -191,22 +195,40 @@ while True:
     elif game_Choice == "change win amount"or game_Choice == "change win" or game_Choice == "change amount" or game_Choice == "change":
         print("WARNING: THIS INVALIDATES YOUR RUN, ARE YOU SURE YOU WANT TO USE THIS COMMAND?")
         confirmation_Change = input("(y/n) >").lower()
-        if confirmation_Change == "y":
+        if confirmation_Change == "y" or confirmation_Change == "yes":
             print("What do you want to change the win amount to?")
             new_Amount = int(input("$"))
             win_Amount = new_Amount
             invalidate_Run = True
             print(f"Win amount changed to ${win_Amount}")
+            print("================================================")
+            check_Win()
         else:
             print("Command cancelled")
+            print("================================================")
     elif game_Choice == "money":
         print("WARNING: THIS INVALIDATES YOUR RUN, ARE YOU SURE YOU WANT TO USE THIS COMMAND?")
         confirmation_Money = input("(y/n) >").lower()
-        if confirmation_Money == "y":
+        if confirmation_Money == "y" or confirmation_Money == "yes":
             money = int(input("How much money do you want to have? $"))
             invalidate_Run = True
+            print("================================================")
+            check_Win()
         else:
             print("Command cancelled")
+            print("================================================")
+    elif game_Choice == "win":
+        print("WARNING: THIS INVALIDATES YOUR RUN, ARE YOU SURE YOU WANT TO USE THIS COMMAND?")
+        confirmation_Win = input("(y/n) >").lower()
+        if confirmation_Win == "y" or confirmation_Win == "yes":
+            invalidate_Run = True
+            win_Amount = 1
+            money = 9223372036854775807
+            print("================================================")
+            check_Win()
+        else:
+            print("Command cancelled")
+            print("================================================")
 
 print("The bad ending...")
 print("You went broke and lost all your money, better luck next time...")
