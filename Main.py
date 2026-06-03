@@ -9,6 +9,7 @@ import sys
 from Minigames.Black_Jack_Script import black_Jack
 from Minigames.Slot_Machine_Script import slot_Machine
 from Minigames.Roulette_Script import roulette
+from Minigames.Flip_A_Coin_Script import flip_A_Coin
 
 
 
@@ -41,6 +42,7 @@ while True:
         print("- black jack")
         print("- slot machine")
         print("- roulette")
+        print("- coin flip")
         print("Commands:")
         print("- clear")
         print("- exit")
@@ -107,6 +109,31 @@ while True:
                 print(f"You now have ${money}")
                 print("============================")
             elif roulette_Win == False:
+                print(f"You lost ${bet}")
+                money = money - bet
+                print(f"You know have ${money}")
+                print("============================")
+                if money == 0:
+                    print("You went broke...")
+                    break
+            else:
+                print("ERROR")
+        elif bet > money:
+            print("Bro bet something you can aford")
+    #flip a cpoin ================================================================================
+    elif game_Choice == "flip a coin" or game_Choice == "flip coin" or game_Choice == "coin" or game_Choice == "coin flip":
+        print("Flip a coin, please place a bet")
+        bet = int(input("$"))
+        if bet <= money:
+            print(f"bet placed as ${bet}")
+            coin_Win = flip_A_Coin()
+            if coin_Win == True:
+                bet = bet * 2
+                print(f"You got ${bet}")
+                money = bet + money
+                print(f"You now have ${money}")
+                print("============================")
+            elif coin_Win == False:
                 print(f"You lost ${bet}")
                 money = money - bet
                 print(f"You know have ${money}")
