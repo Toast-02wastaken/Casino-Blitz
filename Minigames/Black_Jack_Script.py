@@ -80,6 +80,7 @@ def black_Jack():
                 print("===========================")
                 print("You bust!")
                 print("Score: INVALID WIN")
+                return False
                 break
             else:
                 card_One = card_Two + card_One

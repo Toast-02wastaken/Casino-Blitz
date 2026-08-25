@@ -89,7 +89,6 @@ while True:
             bet = int(input("$"))
             if bet <= money:
                 print(f"bet placed as ${bet}")
-                black_Jack()
                 black_Jack_Win = black_Jack()
                 if black_Jack_Win == True:
                     bet = bet * 2
@@ -113,7 +112,6 @@ while True:
             bet = int(input("$"))
             if bet <= money:
                 print(f"bet placed as ${bet}")
-                slot_Machine()
                 slot_Machine_Win = slot_Machine()
                 if slot_Machine_Win == True:
                     bet = bet * 2
