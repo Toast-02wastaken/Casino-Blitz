@@ -28,6 +28,8 @@ abilty_Tokens = 0
 free_Bet = 0
 used_Free_Bet = False
 
+bet_Reward = 2
+
 os.system('cls' if os.name == 'nt' else 'clear')
 
 print("=== Casino Blitz ===")
@@ -82,7 +84,7 @@ while True:
             if abilty_Tokens >= 1:
                 abilty_Tokens -= 1
                 print(f"You have {abilty_Tokens} ability tokens left")
-                random_Ability = random.randint(1, 3)
+                random_Ability = random.randint(1, 4)
                 if random_Ability == 1:
                     print("You got +500 dollars!")
                     money += 500
@@ -98,6 +100,9 @@ while True:
                     print("This means that if you win the next game, you will get double the money, but if you lose, you won't lose any money")
                     print("This ability will be used automatically in the next game you play")
                     free_Bet = 1
+                elif random_Ability == 4:
+                    print("You got Double Reward for the next game! You will now get x3 the money instead of x2")
+                    bet_Reward = 3
 
                 else:
                     print("You don't have any ability tokens to use")
@@ -136,22 +141,26 @@ while True:
                         print("You used a free bet, so you doubled your money")
                         used_Free_Bet = False
                         money = money + money
+                        bet_Reward = 2
                     else:
-                        bet = bet * 2
+                        bet = bet * bet_Reward
                         print(f"You got ${bet}")
                         money = bet + money
                     print(f"You now have ${money}")
                     abilty_Tokens += 1
                     print(f"You have {abilty_Tokens} ability tokens")
+                    bet_Reward = 2
                     print("============================")
                 elif black_Jack_Win == False:
                     if used_Free_Bet == True:
                         print("You used a free bet, so you lost nothing")
                         used_Free_Bet = False
+                        bet_Reward = 2
                     else:
                         print(f"You lost ${bet}")
                         money = money - bet
                     print(f"You know have ${money}")
+                    bet_Reward = 2
                     if money == 0:
                         print("You went broke...")
                         break
@@ -177,23 +186,27 @@ while True:
                         print("You used a free bet, so you doubled your money")
                         used_Free_Bet = False
                         money = money + money
+                        bet_Reward = 2
                     else:
-                        bet = bet * 2
+                        bet = bet * bet_Reward
                         print(f"You got ${bet}")
                         money = bet + money
                     print(f"You now have ${money}")
                     abilty_Tokens += 1
                     print(f"You have {abilty_Tokens} ability tokens")
+                    bet_Reward = 2
                     print("============================")
                     check_Win()
                 elif slot_Machine_Win == False:
                     if used_Free_Bet == True:
                         print("You used a free bet, so you lost nothing")
                         used_Free_Bet = False
+                        bet_Reward = 2
                     else:
                         print(f"You lost ${bet}")
                         money = money - bet
                     print(f"You know have ${money}")
+                    bet_Reward = 2
                     print("============================")
                     check_Win()
                     if money == 0:
@@ -222,23 +235,27 @@ while True:
                     print("You used a free bet, so you doubled your money")
                     used_Free_Bet = False
                     money = money + money
+                    bet_Reward = 2
                 else:
-                    bet = bet * 2
+                    bet = bet * bet_Reward
                     print(f"You got ${bet}")
                     money = bet + money
                 print(f"You now have ${money}")
                 abilty_Tokens += 1
                 print(f"You have {abilty_Tokens} ability tokens")
+                bet_Reward = 2
                 print("============================")
                 check_Win()
             elif roulette_Win == False:
                 if used_Free_Bet == True:
                     print("You used a free bet, so you lost nothing")
                     used_Free_Bet = False
+                    bet_Reward = 2
                 else:
                     print(f"You lost ${bet}")
                     money = money - bet
                 print(f"You know have ${money}")
+                bet_Reward = 2
                 print("============================")
                 if money == 0:
                     print("You went broke...")
@@ -266,23 +283,27 @@ while True:
                     print("You used a free bet, so you doubled your money")
                     used_Free_Bet = False
                     money = money + money
+                    bet_Reward = 2
                 else:
-                    bet = bet * 2
+                    bet = bet * bet_Reward
                     print(f"You got ${bet}")
                     money = bet + money
                 print(f"You now have ${money}")
                 abilty_Tokens += 1
                 print(f"You have {abilty_Tokens} ability tokens")
+                bet_Reward = 2
                 print("============================")
                 check_Win()
             elif coin_Win == False:
                 if used_Free_Bet == True:
                     print("You used a free bet, so you lost nothing")
                     used_Free_Bet = False
+                    bet_Reward = 2
                 else:
                     print(f"You lost ${bet}")
                     money = money - bet
                 print(f"You know have ${money}")
+                bet_Reward = 2
                 print("============================")
                 if money == 0:
                     print("You went broke...")
