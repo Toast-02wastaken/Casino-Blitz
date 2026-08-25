@@ -1,3 +1,8 @@
+# CASINO BLITZ v4.0 FULL RELEASE!
+The next stuff is the details of the current update
+
+
+
 The full release of Casino Blitz is now out! as well as more content and bug fixes!
 
 # NEW CONTENT IN v4.0
