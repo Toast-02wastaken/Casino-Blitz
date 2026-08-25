@@ -362,4 +362,3 @@ print("The bad ending...")
 print("You went broke and lost all your money, better luck next time...")
 print("thanks for playing ig, go win the game...")
 sys.exit()
-        
