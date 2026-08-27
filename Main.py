@@ -128,7 +128,7 @@ while True:
         print("- money (WARNING: INVLIDATES RUN)")
         print("- win (WARNING: INVLIDATES RUN)")
         print("================================================")
-        first_Turn = False
+        first_Turn = True
     
     #Black Jack ===========================================
     elif game_Choice == "black jack":
