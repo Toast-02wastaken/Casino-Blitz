@@ -1,4 +1,4 @@
-# CASINO BLITZ v4.0 FULL RELEASE!
+# CASINO BLITZ v4.1 FULL RELEASE!
 The next stuff is the details of the current update
 
 
@@ -44,6 +44,8 @@ With the new abilities there was a lot of bugs before the official release, so I
 - Fixed Free Bet still loosing money after loosing
 - Fixed Free Bet still asking for bet after printed out it worked
 - Fixed Double bet not working
+- Fixed 'help' command counting as a turn
+- Fixed the ability not letting you skip
 
 # Balancing
 
