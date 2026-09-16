@@ -124,6 +124,7 @@ while True:
         print("Commands:")
         print("- clear")
         print("- exit")
+        print("- upd (update)")
         print("- change win amount (WARNING: INVLIDATES RUN)")
         print("- money (WARNING: INVLIDATES RUN)")
         print("- win (WARNING: INVLIDATES RUN)")
