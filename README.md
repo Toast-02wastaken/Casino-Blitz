@@ -1,4 +1,4 @@
-# CASINO BLITZ v4.1
+# CASINO BLITZ v4.21
 Casino Blitz is a text based python casino game, where you have to get money from gambling! Unlock Ability's and win games while under the pressure of not running broke!
 
 
