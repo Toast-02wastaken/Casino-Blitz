@@ -348,6 +348,13 @@ while True:
         os.system('cls' if os.name == 'nt' else 'clear')
     elif game_Choice == "exit":
         sys.exit()
+    elif game_Choice == "upd" or game_Choice == "update" or game_Choice == "updates":
+        print("Are you sure you want to update the script? This will delete all your progress")
+        upd_Confirm = input("(y/n) >").lower()
+        if upd_Confirm == "y" or upd_Confirm == "yes":
+            print("restarting...")
+            os.execv(sys.executable, [sys.executable] + sys.argv)
+
     elif game_Choice == "change win amount"or game_Choice == "change win" or game_Choice == "change amount" or game_Choice == "change":
         print("WARNING: THIS INVALIDATES YOUR RUN, ARE YOU SURE YOU WANT TO USE THIS COMMAND?")
         confirmation_Change = input("(y/n) >").lower()
@@ -385,6 +392,26 @@ while True:
         else:
             print("Command cancelled")
             print("================================================")
+
+
+
+    #Jdrive Commands:
+    elif game_Choice == "jdrivechange win amount"or game_Choice == "jdrivechange win" or game_Choice == "jdrivechange amount" or game_Choice == "jdrivechange":
+                print("What do you want to change the win amount to?")
+                new_Amount = int(input("$"))
+                win_Amount = new_Amount
+                print(f"Win amount changed to ${win_Amount}")
+                print("================================================")
+                check_Win()
+    elif game_Choice == "jdrivechange money":
+                money = int(input("How much money do you want to have? $"))
+                print("================================================")
+                check_Win()
+    elif game_Choice == "jdrivewin":
+                win_Amount = 1
+                money = 9223372036854775807
+                print("================================================")
+                check_Win()
 
 print("The bad ending...")
 print("You went broke and lost all your money, better luck next time...")
